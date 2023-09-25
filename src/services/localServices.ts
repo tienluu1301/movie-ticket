@@ -1,8 +1,8 @@
 import { LOCAL_SERVICE_KEYS } from '../constant/common'
-import { IUser } from '../types/user.interface'
+import { IUserInfo } from '../types/user.interface'
 
 const user = {
-    set: (data: IUser) => {
+    set: (data: IUserInfo) => {
         localStorage.setItem(LOCAL_SERVICE_KEYS.USER, JSON.stringify(data))
     },
     get: () => {

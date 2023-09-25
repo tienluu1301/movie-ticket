@@ -1,0 +1,192 @@
+footer {
+    color: var(--clr-white);
+    background: var(--clr-bg8);
+}
+
+.wrapper {
+    padding: 35px 26px 0;
+}
+
+.main {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    margin-bottom: 20px;
+}
+
+.footerItem {
+    color: var(--clr-white);
+    padding-right: 40px;
+
+    h2 {
+        font-size: 1.1rem;
+        font-weight: 400;
+        color: var(--clr-primary);
+        line-height: 1.6;
+        letter-spacing: 0.0075em;
+        text-transform: uppercase;
+
+        margin-bottom: 30px;
+    }
+
+    li {
+        font-size: 14px;
+        margin-bottom: 15px;
+
+        a {
+            transition: color 0.3s ease;
+
+            &:hover {
+                color: var(--clr-primary);
+            }
+        }
+    }
+}
+
+.contact {
+    grid-column: 1 / span 2;
+
+    h2 {
+        font-size: 1.5rem;
+        font-weight: 500;
+        color: var(--clr-white);
+
+        margin-bottom: 20px;
+
+        strong {
+            color: var(--clr-primary);
+        }
+    }
+
+    li {
+        margin-bottom: 5px;
+
+        a {
+            margin-left: 6px;
+        }
+    }
+}
+
+.download {
+    p {
+        font-size: 14px;
+        margin-bottom: 15px;
+    }
+
+    .downloadIcon {
+        display: flex;
+        gap: 10px;
+
+        margin-bottom: 20px;
+
+        img {
+            width: 115px;
+            height: auto;
+
+            border-radius: 5px;
+        }
+    }
+
+    .discount {
+        font-size: 16px;
+
+        span {
+            color: var(--clr-primary);
+        }
+    }
+}
+
+.copyright {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
+    border-top: 1px solid var(--clr-border5);
+
+    font-size: 14px;
+
+    span {
+        margin-left: 5px;
+        color: var(--clr-primary);
+
+        transition: color 0.3s ease;
+        cursor: pointer;
+
+        &:hover {
+            color: var(--clr-hover-copyright);
+        }
+    }
+
+    .socialMedia {
+        display: flex;
+        gap: 10px;
+
+        svg {
+            font-size: 1.25rem;
+            transition: color 0.3s ease;
+
+            &:hover {
+                color: var(--clr-primary);
+            }
+        }
+    }
+}
+
+/*
+=============================================
+                  RESPONSIVE
+=============================================
+*/
+@media screen and (max-width: 980px) {
+    .main {
+        grid-template-columns: repeat(2, 1fr);
+        margin-bottom: 0;
+    }
+
+    .footerItem {
+        margin-bottom: 40px;
+        padding-right: 0;
+
+        h2 {
+            margin-bottom: 20px;
+        }
+    }
+
+    .download {
+        grid-column: 1 / span 2;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .wrapper {
+        padding: 35px 10px 0;
+    }
+
+    .main {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .footerItem {
+        margin-bottom: 30px;
+    }
+
+    .contact {
+        grid-column: unset;
+
+        li {
+            margin-bottom: 10px;
+        }
+    }
+
+    .download {
+        grid-column: unset;
+    }
+
+    .copyright {
+        display: block;
+        text-align: center;
+        line-height: 1.6;
+
+        .socialMedia {
+            display: none;
+        }
+    }
+}
