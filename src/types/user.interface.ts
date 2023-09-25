@@ -4,6 +4,10 @@ export interface IUser {
     email: string
     soDT: string
     maNhom: string
+    matKhau: string
+}
+
+export interface IUserInfo extends Omit<IUser, 'matKhau'> {
     maLoaiNguoiDung: string
     accessToken: string
 }

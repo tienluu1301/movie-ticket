@@ -4,6 +4,7 @@
     "version": "0.0.0",
     "type": "module",
     "scripts": {
+        "prebuild": "npm run convert-svg",
         "dev": "vite",
         "build": "tsc && vite build",
         "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
@@ -11,11 +12,13 @@
         "format": "prettier -c --write \"*/**\"",
         "prepare": "husky install",
         "postinstall": "husky install",
-        "svg": "npx @svgr/cli --out-dir src/svg/%npm_config_to% -- src/svg/%npm_config_from% "
+        "convert-svg": "mkdirp -p src/svgs && svgr --out-dir src/svgs -- src/assets/svg"
     },
     "dependencies": {
+        "@emotion/styled": "^11.11.0",
         "@mui/icons-material": "^5.14.9",
         "@mui/material": "^5.14.10",
+        "@mui/styled-engine-sc": "^5.14.10",
         "@reduxjs/toolkit": "^1.9.5",
         "@tanstack/react-query": "^4.35.3",
         "axios": "^1.5.0",
