@@ -5,7 +5,7 @@ interface IWaiting {
     height: number
 }
 
-const useWindowSize = (delay: number) => {
+export const useWindowSize = (delay: number) => {
     const [windowSize, setWindowSize] = useState({
         width: window.innerWidth,
         height: window.innerHeight,
@@ -51,5 +51,3 @@ const useWindowSize = (delay: number) => {
 
     return windowSize
 }
-
-export default useWindowSize
