@@ -4,15 +4,20 @@ import { Loading } from './layouts/components'
 import { Routes } from './routers'
 import { ThemeProvider } from './context'
 import { GlobalStyles } from './styles'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+
+const queryClient = new QueryClient()
 
 function App() {
     return (
         <ThemeProvider>
             <GlobalStyles>
                 <Suspense fallback={<Loading />}>
-                    <BrowserRouter>
-                        <Routes />
-                    </BrowserRouter>
+                    <QueryClientProvider client={queryClient}>
+                        <BrowserRouter>
+                            <Routes />
+                        </BrowserRouter>
+                    </QueryClientProvider>
                 </Suspense>
             </GlobalStyles>
         </ThemeProvider>

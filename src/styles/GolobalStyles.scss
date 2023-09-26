@@ -154,6 +154,8 @@ button {
 
 .swiper.carousel-slide .swiper-button-prev {
     left: 15px;
+    padding: 60px;
+    pointer-events: initial !important;
 
     @media (min-width: 576px) {
         left: 30px;
@@ -161,7 +163,9 @@ button {
 }
 
 .swiper.carousel-slide .swiper-button-next {
+    padding: 60px;
     right: 15px;
+    pointer-events: initial !important;
 
     @media (min-width: 576px) {
         right: 30px;

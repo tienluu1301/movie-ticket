@@ -1,17 +1,11 @@
 import { useState } from 'react'
 
-type DefaultValue = boolean | number | string | object
-
-const useToggle = (defaultValue: DefaultValue) => {
+export const useToggle = (defaultValue?: boolean) => {
     const [value, setValue] = useState(defaultValue)
 
-    const toggleValue = (value: DefaultValue) => {
-        setValue((currentValue) =>
-            typeof value === 'boolean' ? value : !currentValue,
-        )
+    const toggleValue = (value: boolean) => {
+        setValue(value)
     }
 
-    return [value, toggleValue]
+    return { value, toggleValue }
 }
-
-export default useToggle
