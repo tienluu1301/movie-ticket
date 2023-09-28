@@ -16,11 +16,9 @@ interface ResponseSuccessApi<T> {
 }
 
 export const getBanners = async () => {
-    const {
-        data: { content },
-    } = await fetcher.get<ResponseSuccessApi<IBanner[]>>(
+    const { data } = await fetcher.get<ResponseSuccessApi<IBanner[]>>(
         '/QuanLyPhim/LayDanhSachBanner',
     )
 
-    return content
+    return data.content
 }
